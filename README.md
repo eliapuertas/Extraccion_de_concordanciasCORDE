@@ -26,7 +26,7 @@ Una vez que hayamos configurado el entorno la forma más fácil de empezar a tra
   
   * b) En la siguiente pantalla,'Resultado de la consulta al banco de datos'
     * Copiamos la URL que aparece en la barra de direcciones del navegador:
-  ![Imagen del paso 2](images/Paso-2.jpg)
+  ![Imagen del paso 2](images/Paso-2.png)
 
 2. **Añadimos en la siguiente línea de código la URL del navegador**
    
