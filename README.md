@@ -5,10 +5,11 @@
 Antes de comenzar, debemos asegurarnos de lo siguiente:
 * **Navegador web:** Tener instalado el navegador con el que trabajaremos (se recomienda **Chrome**).
 * **Python:** Tener instalado **Python (versión 3.11 o superior)**.
+* Para que la terminal pueda ejecutar el script, los archivos 'corde_scraper_uc.py' y 'requirements.txt' deben estar guardados en una carpeta específica del ordenador, y la terminal debe estar abierta en ese mismo directorio.
 
 ## Instalación
 Una vez que tengamos Python instalado, seguiremos los siguientes pasos:
-1. Abrimos la **terminal** (o consola de comandos).
+1. Abrimos la **terminal** (o consola de comandos) en el directorio del script
 2. Copiamos y ejecutamos las dos líneas de código para instalar las librerías necesarias (pip... y pip..):
 ```bash
 # Es importante que estemos situados en el directorio que contiene los scripts
@@ -40,3 +41,6 @@ Una vez que hayamos configurado el entorno la forma más fácil de empezar a tra
 4. **Esperamos a la extracción automática**
   * Se abrirá Chrome, esperamos a que se ejecute solo hasta llegar a la pantalla: Resultado de la consulta al banco de datos
   * Una vez demos click a `Recuperar` el script empezará a leer cada registro de cada página para guardar los resultados obtenidos en un archivo Excel.
+
+ 5. **Accedemos a la carpeta de 'Results' del directorio**
+    * El archivo Excel se guardará en el directorio en el cual tenemos el script 
