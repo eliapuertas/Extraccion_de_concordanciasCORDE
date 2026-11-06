@@ -2,43 +2,41 @@
 
 ## Requisitos previos
 
-A la hora de interactuar con esta CLI debemos tener muy claro el navegador con el que queremos trabajar. Actualmente, el CLI está configurado para soportar 3 navegadores:
+Antes de comenzar, debemos asegurarnos de lo siguiente:
+* **Navegador web:** Tener instalado el navegador con el que trabajaremos (se recomienda **Chrome**).
+* **Python:** Tener instalado **Python (versión 3.11 o superior)**.
 
-- Chrome
-- Firefox
-- Edge (?)
-
-Por lo tanto, dichos navegadores deben estar instalados en nuestro entorno.
-
-Además, necesitaremos un intérprete de python instalado es recomendable utilizar una versión igual o superior a la `3.11`.
-
-Una vez que tengamos nuestro intérprete ejecutaremos el siguiente código para instalar los paquetes necesarios:
-
+## Instalación
+Una vez que tengamos Python instalado, seguiremos los siguientes pasos:
+1. Abrimos la **terminal** (o consola de comandos).
+2. Copiamos y ejecutamos las dos líneas de código para instalar las librerías necesarias (pip... y pip..):
 ```bash
-# Es importante que estemos situados en este directorio (el que contiene los scripts)
+# Es importante que estemos situados en el directorio que contiene los scripts
 pip install -r requirements.txt
+pip install undetected-chromedriver pandas openpyxl
 ```
 
 ## Manejo y uso
 
 Una vez que hayamos configurado el entorno la forma más fácil de empezar a trabajar es la siguiente:
+1. **Abrimos el explorador y accedemos de forma manual a la web del CORDE** (https://corpus.rae.es/cordenet.html)
+ * a) Rellenamos nuestro perfil de búsqueda y pulsamos 'Recuperar':
 
-```bash
-python corde_scraper.py -b firefox -t concord -v
-```
+  ![Imagen del paso 1](images/Paso-1.jpg)
+  
+  * b) En la siguiente pantalla,'Resultado de la consulta al banco de datos'
+    * Copiamos la URL que aparece en la barra de direcciones del navegador:
+  ![Imagen del paso 2](images/Paso-2.jpg)
 
-Las opciones:
-
-- `b` : el navegador (firefox, chrome o edge)
-- `t` : el tipo de acción. Actualmente solo está soportada la extracción de concordancias
-- `v`: para loggear los eventos del script
-
-Una vez ejecutado, aparecerá la ventana del navegador con la página del CORDE. Primero rellenamos nuestro perfil de búsqueda:
-
-![Imagen del paso 1](images/Paso-1.jpg)
-
-Y después seleccionamos los resultados que queremos obtener:
-![Imagen del paso 2](images/Paso-2.jpg)
-
-Tenemos un total de 5 MINUTOS como máximo para ejecutar estas dos acciones: el script dará error pasado ese tiempo.
-Una vez demos click a `Recuperar` el script empezará a leer cada registro de cada página para guardar los resultados obtenidos en un archivo excel (aunque podemos modificar el comando anterior para guardarlos en excel).
+2. **Añadimos en la siguiente línea de código la URL del navegador**
+   
+  ```bash
+  python corde_scraper_uc.py -v --url "URL AQUÍ"
+  
+  #La siguiente línea de código es un ejemplo:
+  python corde_scraper_uc.py -v --url "https://corpus.rae.es/cgi-bin/crpsrvEx.dll?MfcISAPICommand=buscar&tradQuery=1&destino=1&texto=casita&autor=&titulo=&ano1=1902&ano2=1905&medio=1000&pais=1000&tema=1000"
+  ```
+3. **Ejecutamos en la terminal del ordenador la línea de código anterior**
+4. **Esperamos a la extracción automática**
+  * Se abrirá Chrome, esperamos a que se ejecute solo hasta llegar a la pantalla: Resultado de la consulta al banco de datos
+  * Una vez demos click a `Recuperar` el script empezará a leer cada registro de cada página para guardar los resultados obtenidos en un archivo Excel.
